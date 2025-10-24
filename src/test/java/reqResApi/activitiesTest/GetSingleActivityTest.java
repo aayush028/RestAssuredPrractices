@@ -44,17 +44,5 @@ public class GetSingleActivityTest extends BaseTest {
         softAssert.assertAll();
 
 
-        softAssert.assertEquals(response.getStatusCode(), 200, "Status code mismatch");
-
-        softAssert.assertTrue(response.getContentType().contains("application/json"), "Content type mismatch");
-
-        softAssert.assertEquals(activityById.getId(), activitiesData.getId(), "ID is not 2");
-
-        softAssert.assertEquals(activityById.getTitle(), "Activity 2", "Title mismatch");
-
-        softAssert.assertTrue(activityById.getDueDate().matches("\\d{4}-\\d{2}-\\d{2}T.*"), "DueDate format incorrect");
-
-        softAssert.assertTrue(activityById.isCompleted(), "Completed should be true");
-
     }
 }
